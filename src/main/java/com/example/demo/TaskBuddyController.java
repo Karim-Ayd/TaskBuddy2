@@ -4,24 +4,32 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/todos")
-@CrossOrigin(origins = "*")
-public class TaskBuddyController {
 
-    private final TaskbuddyRepository repo;
+    @RestController
+    @RequestMapping("/api/todos")
+    @CrossOrigin
+    public class TaskBuddyController {
 
-    public TaskBuddyController(TaskbuddyRepository repo) {
-        this.repo = repo;
+        private final TaskbuddyRepository repository;
+
+        public TaskBuddyController(TaskbuddyRepository repository) {
+            this.repository = repository;
+        }
+
+        @GetMapping
+        public List<Taskbuddy> getTodos() {
+            return repository.findAll();
+        }
+
+        @PostMapping
+        public Taskbuddy addTodo(@RequestBody Taskbuddy todo) {
+            return repository.save(todo);
+        }
+
+       @DeleteMapping("/{id}")
+        public void deleteTodo(@PathVariable Long id) {
+            repository.deleteById(id);
+        }
     }
 
-    @GetMapping
-    public List<Taskbuddy> getTodos() {
-        return repo.findAll();
-    }
 
-    @PostMapping
-    public Taskbuddy addTodo(@RequestBody Taskbuddy todo) {
-        return repo.save(todo);
-    }
-}
