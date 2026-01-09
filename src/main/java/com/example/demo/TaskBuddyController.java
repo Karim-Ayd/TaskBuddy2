@@ -8,7 +8,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/todos")
-@CrossOrigin(origins = "*")
 public class TaskBuddyController {
 
     private final TaskbuddyRepository repository;
@@ -28,10 +27,13 @@ public class TaskBuddyController {
         if (todo.getTitle() == null || todo.getTitle().trim().isEmpty()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "title required");
         }
+
         todo.setTitle(todo.getTitle().trim());
+
         if (todo.getCreatedAt() == null) {
             todo.setCreatedAt(System.currentTimeMillis());
         }
+
         return repository.save(todo);
     }
 
@@ -44,6 +46,7 @@ public class TaskBuddyController {
             String t = body.getTitle().trim();
             if (!t.isEmpty()) existing.setTitle(t);
         }
+
         existing.setDone(body.isDone());
 
         // createdAt nicht verlieren
