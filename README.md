@@ -3,10 +3,8 @@ TaskBuddy ist eine minimalistische, aber leistungsstarke Web-App zur Verwaltung 
 Teammitglieder: Karim Ayada & Rohat Seran
 
 Features:
-- Aufgaben erstellen, bearbeiten und löschen
-- Aufgaben als erledigt markieren
-- Aufgaben nach Kategorien filtern
-- Sortierung nach Erstellungsdatum
-- Suche nach Titel
-- Multi-User-Funktion
-- Responsive Design
+- ✅ Tasks erstellen, abhaken (done/active), löschen
+- 🔎 Filter: **All / Active / Done**
+- 🧹 “Clear done” (alle erledigten löschen)
+- 🕒 `createdAt` Timestamp (UI-Datum)
+- 🌐 Backend-Statusanzeige (Online/Connecting/Retry)
