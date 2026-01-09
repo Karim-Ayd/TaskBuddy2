@@ -34,3 +34,5 @@ Features:
 16. 🕒 Erstellungsdatum: Anzeige des Datums pro Task (createdAt)
 
 17. 🌙 Dark Mode: Umschaltbares Design (Hell/Dunkel) für bessere Lesbarkeit am Abend
+
+18. ↩️ Undo (Rückgängig): Letzte Aktion (z. B. Delete oder Done/Undone) kann innerhalb kurzer Zeit rückgängig gemacht werden
