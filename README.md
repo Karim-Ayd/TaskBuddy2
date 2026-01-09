@@ -1,4 +1,4 @@
-# TaskBuddy2
+# TaskBuddy2 backend
 TaskBuddy ist eine minimalistische, aber leistungsstarke Web-App zur Verwaltung von Aufgaben.
 Teammitglieder: Karim Ayada & Rohat Seran
 
